@@ -14,6 +14,9 @@ import { ROUTES } from './app.routes';
 //servicios
 import { SpotifyService } from './services/spotify.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NoimagePipe } from './pipes/noimage.pipe';
+
+
 
 
 
@@ -23,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     SearchComponent,
     ArtistaComponent,
-    NavbarComponent
+    NavbarComponent,
+    NoimagePipe
   ],
   imports: [
     BrowserModule,
