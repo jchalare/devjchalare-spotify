@@ -15,7 +15,7 @@ export class SpotifyService {
     const URL = `https://api.spotify.com/v1/${ query }`;
 
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQB9jTBUm_cxNFUqwV5yHIsWyXRWmy6KNvWSROeexGyUebaC_pjO06CGZwd2DoIEo_HfZkhLnzGJmH_u7OQ'
+      'Authorization': 'Bearer BQC82b5k1o4fOndndBByPEno19EC0nZVpMOEVy5XqZLdHY1m0QuTbb0CrJ_wiX-7Tx9LTUNchJBckKcG7Jk'
     });
 
 
@@ -59,7 +59,7 @@ export class SpotifyService {
    Siempre y cuando sea solo una linea y esa linea sea la linea del return
    */
 
-  getArtista(termino: string) {
+  getArtistas(termino: string) {
 
     /*const headers = new HttpHeaders({
       'Authorization': 'Bearer BQBdDUomQb-FFvEImJFnQAWvAjnFOA9QiQu1psvYQMo72jMjf8sQ8BQcEqy2Y3NTrjkxwFx_vnW6CIoUeew'
@@ -75,6 +75,20 @@ export class SpotifyService {
 
 
   }
+
+  getArtista(id: string) {
+    return this.getQuery(`artists/${id}`);
+      /*.pipe( map( data =>  data['artists'].items ));*/
+
+  }
+
+
+  getTopTracks(id: string) {
+    return this.getQuery(`artists/${id}/top-tracks?country=es`)
+      .pipe( map( data =>  data['tracks']));
+
+  }
+
 
 
 
